@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <h3>Вход</h3>
+</div>
+<form name="form.userForm" ng-submit="submitForm()" novalidate>
+    <div class="modal-body">
+        <!-- NAME -->
+<!--
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" ng-model="name" required>
+            <p ng-show="form.userForm.name.$invalid && !form.userForm.name.$pristine" class="help-block">You name is required.</p>
+        </div>
+-->
+
+        <!-- USERNAME -->
+<!--
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8" required>
+            <p ng-show="form.userForm.username.$error.minlength" class="help-block">Username is too short.</p>
+            <p ng-show="form.userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+        </div>
+-->
+
+        <!-- EMAIL -->
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email" required>
+            <p ng-show="form.userForm.email.$invalid && !form.userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="4" required>
+            <p ng-show="form.userForm.password.$error.minlength" class="help-block">Password of minimum length of 4 is required.</p>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+
+        <div style="text-align:left">
+            <a href ui-sref="main.signup" ng-click="cancel()">Регистрация</a>
+        </div>
+
+        <a href ng-click="facebookLogin()">Вход через Facebook</a>
+        <button type="submit" class="btn btn-primary" ng-disabled="form.userForm.$invalid">Вход</button>
+        <button class="btn btn-warning" ng-click="cancel()">Отмена</button>
+    </div>
+</form>

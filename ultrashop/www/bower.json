@@ -1,0 +1,26 @@
+{
+  "name": "ultrashop",
+  "version": "1.0.0",
+  "authors": [
+    "Albert Kovalchuk"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "normalize-css": "normalize.css#~3.0.3",
+    "angular": "~1.4.7",
+    "angular-bootstrap": "~0.14.3",
+    "angular-ui-router": "ui-route#~0.2.15",
+    "angular-mocks": "~1.4.7",
+    "firebase": "~2.3.1",
+    "angularfire": "~1.1.3"
+  }
+}

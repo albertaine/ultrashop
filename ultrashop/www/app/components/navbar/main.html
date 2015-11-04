@@ -1,0 +1,61 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+
+                <li ng-class="{active: $state.includes(model.state + '.catalog')}">
+                    <a href ui-sref=".catalog">
+                        Каталог
+                    </a>
+                </li>
+
+                <li ng-class="{active: $state.includes(model.state + '.delivery')}">
+                    <a href ui-sref=".delivery">
+                        Доставка и оплата
+                    </a>
+                </li>
+
+                <li ng-class="{active: $state.includes(model.state + '.actions')}">
+                    <a href ui-sref=".actions">
+                        Акции и бонусы
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О компании<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">История компании</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Предложение для компаний</a></li>
+                        <li><a href="#">Предложение для оптовиков</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Наши партнеры</a></li>
+                        <li><a href="#">Отзывы и предложения</a></li>
+                        <li><a href="#">Рекламные материалы</a></li>
+                        <li><a href ui-sref=".vacancies">Вакансии</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" ng-hide="userLoggedIn">
+                <div ng-controller="modalSignInCtrl">
+                    <form class="navbar-form navbar-left" role="search">
+                        <button class="btn btn-primary" ng-click="showForm()">Личный кабинет</button>
+                    </form>
+                </div>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" ng-if="userLoggedIn" ng-controller="signOutCtrl">
+                <li><a ui-sref="profile({ id: currentUser.id })" ui-sref-opts="{ id: currentUser.id }">{{currentUser.fullName}}</a></li>
+                <li><a href="javascript:" ng-click="logOut()">[Выход]</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div style="position: absolute; top: 5em; bottom: 0; left: 15px; right: 15px" ui-view>
+
+</div>
